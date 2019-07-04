@@ -1,0 +1,41 @@
+﻿@model MvcBandas.ViewModels.ConciertoDeleteViewModel
+
+@{
+    ViewData["Title"] = "Eliminar";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<h3>¿Estas seguro de eliminar el concierto  @Model.Id?</h3>
+<div>
+    <h4>Concierto</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Lugar)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Lugar)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Banda.Nombre)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Banda.Genero)
+        </dd class>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Fecha)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Fecha)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <button type="submit" class="btn btn-danger">
+            <i class="fas fa-trash-alt"></i> Eliminar
+        </button>
+        <input type="hidden" asp-for="Id" />
+        <a asp-action="Index" class="btn btn-secondary"> <i class="fas fa-undo"></i> Regresar</a>
+    </form>
+</div>

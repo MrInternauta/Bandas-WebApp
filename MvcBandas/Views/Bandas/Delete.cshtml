@@ -1,0 +1,19 @@
+﻿@model MvcBandas.Models.Banda
+
+@{
+    ViewData["Title"] = "Eliminar";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<h3>¿Estas seguro de Eliminar la banda  @Model.Nombre </h3>
+<div>
+    
+    <form asp-action="Delete">
+        <button type="submit" class="btn btn-danger">
+            <i class="fas fa-trash-alt"></i> Eliminar
+        </button>
+        <input type="hidden" asp-for="Id" />
+        <a asp-action="Index" class="btn btn-secondary"> <i class="fas fa-undo"></i> Regresar</a>
+    </form>
+</div>
